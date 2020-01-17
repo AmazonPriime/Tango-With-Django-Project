@@ -1,10 +1,20 @@
-# virtual env
+# - VIRTUAL ENV
 rango
 
-# python3
+
+# - PYTHON3
 __pycache__
 *.pyc
 
-# macos
+
+# - macos
 .DS_Store
 Icon?
+
+
+# - DJANGO
+db.sqlite3
+
+
+# - OTHER
+config.py
