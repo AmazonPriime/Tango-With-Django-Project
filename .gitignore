@@ -1,0 +1,10 @@
+# virtual env
+rango
+
+# python3
+__pycache__
+*.pyc
+
+# macos
+.DS_Store
+Icon?
