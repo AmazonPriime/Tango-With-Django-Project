@@ -24,4 +24,18 @@ Working for the WAD2 course labs at the University of Glasgow based on the ebook
     * create ```static``` directory in the project directory
     * add path to the static directory in the ```STATICFILES_DIRS```
     * in templates using static files put ```{% load staticfiles %}``` between ```<head>``` and ```<!DOCTYPE html>```
+
+* Task 5
+  * Database setup
+    * configure which data will be used in the ```DATABASE``` section of the ```settings.py```
+  * Models
+    * create the model in the app/project ```models.py```, ```class <model name>(models.Model)```
+    * register the model inside of the ```admin.py```, the one where the model from ```admin.site.register(<model name>)```
+    * run the command ```python3 manage.py makemigrations <app name>``` and apply it with ```python3 manage.py migrate```
+    * recommended: create a population script for testing
+  * Deleting DB
+    * delete the database file, usually: ```db.sqlite3```
+    * delete the migrations from the migrations folder in app or project
+    * run the migration commands ```python3 manage.py makemigrations <app name>``` and ```python3 manage.py migrate```
+    * create a superuser account ```python3 manage.py createsuperuser```
     
