@@ -38,4 +38,20 @@ Working for the WAD2 course labs at the University of Glasgow based on the ebook
     * delete the migrations from the migrations folder in app or project
     * run the migration commands ```python3 manage.py makemigrations <app name>``` and ```python3 manage.py migrate```
     * create a superuser account ```python3 manage.py createsuperuser```
-    
+
+* Task 6
+  * Slugs
+    * import the slug filter via ```from django.template.defaultfilters import slugify```
+    * utilise the slug field via ```slug = models.SlugField()```
+    * override the default save method for the model
+      * ```python3
+		def save(self, *args, **kwargs):
+        	self.slug = slugify(self.name)
+        	super(Category, self).save(*args, **kwargs)
+        ```
+  * Parameter passing in urls
+    * add them as parameters in the view in ```views.py``` after the request parameter
+    * add them into the ```urls.py``` ```path('category/<<type>:<paremeter name>>/', views.<view name>, name = '<view name>'),```
+  * Loops and conditionals in templates
+    * fixed loops: ```{% for n in numbers %} <h1>{{ n }}</h1> {% endfor %}```
+    * conditionals: ```{% if n == 1 %} <h1>The number is 1</h1> {% else %} <h1>The number is not 1</h1> {% endif %}```
