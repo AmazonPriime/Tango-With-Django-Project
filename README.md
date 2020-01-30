@@ -55,3 +55,15 @@ Working for the WAD2 course labs at the University of Glasgow based on the ebook
   * Loops and conditionals in templates
     * fixed loops: ```{% for n in numbers %} <h1>{{ n }}</h1> {% endfor %}```
     * conditionals: ```{% if n == 1 %} <h1>The number is 1</h1> {% else %} <h1>The number is not 1</h1> {% endif %}```
+
+* Task 7
+  * Forms
+    * create a ```forms.py``` in the app or project - depending on which one needs it
+    * create a form class for each form ```class <form name>(forms.ModelForm)```
+    * inside nested ```class Meta``` associate the form with a model ```model = <model name>```
+    * within the Meta class you can also include or exclude specific fields ```fields = (<fields>)``` ```exclude = (<fields>)```
+  * Form template
+    * uses ```<form id="<id describing form>" method="post" action="<url which in the url mappings points to form view>"></form>``` HTML tags
+    * requires that you use the tag ```{% csrf_token %}```
+    * hidden fields must be added in template: ```{% for hidden in form.hidden_fields %} {{ hidden }} {% endfor %}```
+    * user fields must be added in template: ```{% for field in form.visible_fields %} {{ field.errors }} {{ field.help_text }} {{ field }} {% endfor %}```
