@@ -67,3 +67,14 @@ Working for the WAD2 course labs at the University of Glasgow based on the ebook
     * requires that you use the tag ```{% csrf_token %}```
     * hidden fields must be added in template: ```{% for hidden in form.hidden_fields %} {{ hidden }} {% endfor %}```
     * user fields must be added in template: ```{% for field in form.visible_fields %} {{ field.errors }} {{ field.help_text }} {{ field }} {% endfor %}```
+
+* Task 8
+  * URLs
+    * Decoupling URLs by using url tags
+      * ```{% url '<app>:<url>' <argument> %}```
+  * Template inheritance
+    * using block tags to lower repeated code ```{% block <block_name> %} {% endblock %}```
+  * Custom template tags
+    * create a directory called ```templatetags``` in the application
+    * create an empty ```__init__.py``` and ```<app name>_template_tags.py```
+    * where you wish to use the custom tags load them with ```{% load <template tags file name> %}```
